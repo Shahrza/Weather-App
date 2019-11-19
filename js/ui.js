@@ -23,6 +23,8 @@ class UI {
     this.humidity.textContent = `Relative Humidity: ${weather.main.humidity} g/m3`;
     this.pressure.textContent = `Relative Pressure: ${weather.main.pressure} hPa`;
     this.wind.textContent = `Wind speed: ${weather.wind.speed} km/h`;
-    this.minmax.textContent = `Temperature min & max: ${weather.main.temp_min} / ${weather.main.temp_max}`;
+    this.minmax.textContent = `Temperature min & max: ${Math.round(
+      weather.main.temp_min
+    ) - kelvin}°C / ${Math.round(weather.main.temp_max) - kelvin}°C`;
   }
 }
