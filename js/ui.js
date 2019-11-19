@@ -12,9 +12,10 @@ class UI {
   }
 
   paint(weather) {
+    const kelvin = 273;
     this.location.textContent = weather.name + ", " + weather.sys.country;
     this.desc.textContent = weather.weather[0].description.toUpperCase();
-    this.string.textContent = `${weather.main.temp} °F`;
+    this.string.textContent = `${Math.round(weather.main.temp) - kelvin}°C`; //K − 273.15 = °C
     this.icon.setAttribute(
       "src",
       `http://openweathermap.org/img/w/${weather.weather[0].icon}.png`
